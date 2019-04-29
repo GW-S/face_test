@@ -1,0 +1,25 @@
+剑指offer:青蛙跳台阶
+
+public:
+    int jumpFloor(int number) {
+        
+        // 青蛙跳台阶
+        if(number==0)return 0;
+        if(number==1)return 1;
+        if(number==2)return 2;
+        int i = 3;
+        int first = 1;
+        int second = 2;
+        while(i<=number){
+           int temp = second;
+           second = first + second;
+           first  = temp;
+            i++;
+        }
+        return second;
+        
+        
+        
+    }
+}
+
