@@ -2,6 +2,7 @@
 问题在于，比较运算符的==忘记写。
 考虑问题不够全面。
 
+'''
 TreeLinkNode* GetNext(TreeLinkNode* pNode)
     {
         // 我真的不知道该怎么搞。
@@ -47,3 +48,4 @@ TreeLinkNode* GetNext(TreeLinkNode* pNode)
         }
         return NULL;
     }
+'''
