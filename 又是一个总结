@@ -1,0 +1,130 @@
+1.LSTM结构，公式推导
+  LSTM有三个门，输入门，输出门，记忆门
+  在输入门中，输入门直接决定保留多少记忆输入，输出门直接决定多少记忆输出，记忆门决定多少记忆输出。
+
+2.GRU结构，公式推导
+  GRU有两个门，分别是重置门和更新门。
+    
+3.普通的RNN结构，公式推导。
+  记住RNN的两层结构
+
+4.为什么损失函数要用交叉熵？
+  因为二次方损失函数是经过推导会出现一种现象，损失函数越大，但是相应的反向传播却越小，这不太符合直觉。
+
+5.softmax反向传播的推导。
+  softmax反向传播函数，首先是要计算loss,一般是用交叉熵，对于一个softmax输出点来说，它的损失函数就是-1/y,则softmax的损失函数，针对于自己直接面的点，是一个推导方法，针对其它的点的推导是一个推导方法。当i=j的时候，最后得出aj * (1-aj) * （-1/y)针对于其他点，那就是[(e^z * e^z)/e^2z];
+
+4.普通的RNN的反向传播
+  RNN和DNN区别不大，只是需要考虑两个损失来源，一个是输出层的，一个是最后的输出层的。  
+
+5.LSTM的反向传播。
+  LSTM的反向传播更加复杂，
+
+2.反向传播公式推导
+    
+4.生成式和判别式的区别？
+  生成式是将现在的行为看做一个先验，现在的行为是有先验知识的，也就是会有计算边缘概率的过程。
+  判别式是直接用现有的属性，却预测未来的值。
+
+5.手写快排
+  qsort(int mat,start,end){
+	int key = mat[start];
+        itn first = start;
+        int last = end;
+	while(start<end}
+        {	
+	while(start<end&&mat[end]>=key)
+        	{end--;}
+	mat[start] = mat[end];
+	while(start<end&&mat[start]<=key)
+	        {start++;}
+	mat[end] = mat[start];
+        }  
+  mat[end] = key;
+  qsort(mat,first,left-1);
+  qsort(mat,left+1,last);
+  return mat;
+ 	
+6.AUC的计算方法
+  首先我们谈谈AUC是什么，再来谈AUC怎么做。
+  AUC全称真阳性和假阳性的检测，他和T-P检测是不同的，T-P检测是针对于所有T中的数据，R是指真正例和假负例中的真正例，P是指真正例和假正例中的真负例。
+  那么，对于真正例和假负例，我们就可以发现，
+
+7.堆排序的写法
+  #include<iostream>
+  using namespace std;
+ 
+  head_sort(int mat[],int size,int i) // 
+  {
+     int max_index = 0;
+     int lchild = 2 * i;
+     int rchild = 2 * i + 1;
+     int max = i;
+    
+     int temp;
+     if(i<=size/2)
+     {
+        if(lchild<=size && a[lchild]>a[max])
+	{max = lchild;}
+        if(rchild<=size && a[rchild]>a[max])
+        {max = rchild;}
+     }
+     if(mat[max]!=i)
+     {
+		
+     }
+	
+        
+
+
+     }
+     
+		
+     
+
+
+        
+ 
+
+
+  
+     }
+     
+   
+
+     for(int i=0;i<=n;i++){
+        i = 0;
+        
+        
+     }
+ 
+
+
+
+
+  }
+
+  int main(){
+      
+  }
+
+8.有哪些聚类方法？
+  k-means
+  
+
+
+9.Aprior
+  实际上，就是一个求最大关联的算法。
+  那么频繁集就是总结出来的规则，如果A出现，那么B也出现，这就是规则。
+  如果支持集同样是总结出来的规则，在所有中AB共同出现的次数。
+  如果这两点符合一定的频率阈值，那么就可以说，这是一个频繁集。
+
+10.因子分析
+   从变量群众提取共性因子的统计技术，将相同本质的因子归入一个因子，减少变量的树木。
+
+11.双指针注意事项：
+
+12.求最大公约数的方法：gcd(a,b){
+  if b==0:return a;
+  else:return gcd(b,a%b);
+}

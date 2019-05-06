@@ -1,0 +1,36 @@
+剑指offer:扑克牌顺子
+
+class Solution {
+public:
+    bool IsContinuous( vector<int> numbers ) {
+        
+        if(numbers.size()<5){return false;}
+        
+        vector<int> v;
+    set<int> s;
+
+    for(int i=0;i<numbers.size();i++){
+        int each = numbers[i];
+        if(each!=0)
+        {
+            v.push_back(each);
+            s.insert(each);
+        }
+    }
+
+    sort(v.begin(),v.end());
+
+    int v_l = v.size();
+    if(v_l==0)return true;
+
+    if(s.size()!=v.size())          return false;
+    if(v[v_l-1] - v[0] > 4 )        return false;
+
+    
+
+    return true;
+
+        
+    }
+};
+
