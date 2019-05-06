@@ -2,7 +2,7 @@
 问题在于，比较运算符的==忘记写。
 考虑问题不够全面。
 
-'''
+```c++
 TreeLinkNode* GetNext(TreeLinkNode* pNode)
     {
         // 我真的不知道该怎么搞。
@@ -21,23 +21,10 @@ TreeLinkNode* GetNext(TreeLinkNode* pNode)
             return pNode;
         }
         else{
-            
-            // 左节点和右节点
-            // 干你妈逼的干
-            
-            // 是不是根节点node
-               // 是不是右节点
-                      //轮回
-               // 是不是左节点
-            
-            
-            
-           
             while(pNode->next!=NULL)//有前节点
             {
                 if(pNode->next->left==pNode)
-                {
-                   
+                {      
                     return pNode->next;
                 }
                 // 如果是右节点，怎么办？找到下一个做节点
@@ -48,4 +35,4 @@ TreeLinkNode* GetNext(TreeLinkNode* pNode)
         }
         return NULL;
     }
-'''
+```
