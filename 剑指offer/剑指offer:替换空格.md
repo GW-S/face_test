@@ -1,0 +1,40 @@
+剑指offer:替换空格
+目的：实现一个函数，将一个字符串中的每个空格替换成“%20”……
+实际：希望能在不更改字符串的指针的情况下，优化数组。
+方法：先扩展数组大小，再从后往前挪，然而问题在于，强行增加char空间会不会导致越界，显然，在目前的形势下，并没有发生这种现象。
+
+```c++
+class Solution {
+public:
+	void replaceSpace(char *str,int length) {
+        // 
+        // char *str 是个什么东西，直接让数组后移？
+        // 要求是不创建空间，然后将代码挪过去的操作
+        // 不用担心数组越界
+        
+        int black = 0;
+        for(int i=0;i<=length;i++)
+        {
+            if(str[i]==' ')black++;
+        }
+        int new_length = length+black*2;
+        int point1 =new_length;
+        //int point2 =length;
+        
+        for(int point2=length;point2>=0;point2--)
+        {
+            if(str[point2]!=' ')
+            {
+                str[point1]=str[point2];
+                point1--;
+                continue;
+            }
+            str[point1]= '0';point1--;
+            str[point1]= '2';point1--;
+            str[point1]= '%';point1--;
+        }
+	}
+};
+```
+
+

@@ -1,0 +1,66 @@
+剑指offer:链表中环的入口节点
+
+这道题的本意是希望，在不使用外部空间的情况下，能如何遍历编标中环的入口节点。
+难度在于要控制好循环的node的位置。
+
+```c++
+/*
+struct ListNode {
+    int val;
+    struct ListNode *next;
+    ListNode(int x) :
+        val(x), next(NULL) {
+    }
+};
+*/
+class Solution {
+public:
+    ListNode* EntryNodeOfLoop(ListNode* pHead)
+    {
+        // 该问题怎么解？
+        // 外界空间
+        // 实际上，这道题解决的是在不创建新空间的情况下，如何搞定链表问题，简称，这是奇技淫巧
+        
+        // 定律，一个步子是另一个的两倍的时候，一定能追上前者
+        // 能追上后，追上的点，一定在环里，那就统计环里有几个节点
+        // 知道有几个节点，就可以用双指针的方法解决这个问题
+        ListNode* point1;
+        ListNode* point2;
+        
+        if(pHead==NULL)return NULL;
+        //if(pHead->next=NULL)return pHead->next;
+        
+        point1,point2 = pHead;
+        while(point1!=NULL&&point2!=NULL)
+        {
+            point1 = point1->next;   
+            if(point2->next==NULL)return NULL;//遇到终点，无环
+            point2 = point2->next->next;
+            if(point1==point2) break;
+        }
+        if(point1==NULL||point2==NULL)return NULL;
+        
+        int num = 1;
+        point2  = point1->next;
+        while(point2 != point1)
+        {
+            point2=point2->next;
+            num++;
+        }
+        point1 = pHead;
+        point2 = pHead;// 第二个指针节点,我该怎么办？
+       
+        while(num)
+        {
+            num--;
+            point2 = point2->next;
+        }
+        while(point1!=point2)
+        {
+            point1 = point1->next;
+            point2 = point2->next;
+        }
+        return point1;
+    }
+};
+```
