@@ -1,5 +1,5 @@
 剑指offer:青蛙跳台阶
-
+```cpp
 public:
     int jumpFloor(int number) {
         
@@ -22,4 +22,4 @@ public:
         
     }
 }
-
+```
